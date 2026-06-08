@@ -1,24 +1,11 @@
-"""REPOSECURE — one-shot repository security posture grade.
-
-Defensive / authorized-testing only: this tool performs static analysis,
-triage, and detection over a local repository checkout. It never performs
-any network calls or attack actions.
-"""
-from .core import (
-    Finding,
-    Report,
-    grade_repo,
-    score_to_letter,
-)
-
-TOOL_NAME = "reposecure"
-TOOL_VERSION = "1.0.0"
-
-__all__ = [
-    "TOOL_NAME",
-    "TOOL_VERSION",
-    "Finding",
-    "Report",
-    "grade_repo",
-    "score_to_letter",
-]
+"""reposecure — part of the Cognis Neural Suite."""
+try:  # re-export the tool's public API + identity from core
+    from reposecure.core import *  # noqa: F401,F403
+except Exception:  # pragma: no cover
+    pass
+try:
+    from reposecure.core import TOOL_NAME, TOOL_VERSION
+except Exception:  # pragma: no cover
+    TOOL_NAME = "reposecure"
+    TOOL_VERSION = "0.1.0"
+__version__ = TOOL_VERSION
