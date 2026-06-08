@@ -1,0 +1,5 @@
+# Unpinned deps + no lockfile -> medium findings
+requests
+flask
+boto3
+sqlalchemy==2.0.30
