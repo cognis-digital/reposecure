@@ -1,0 +1,10 @@
+{
+  "name": "@cognis/reposecure",
+  "version": "0.2.0",
+  "description": "JavaScript port of reposecure (Cognis Neural Suite)",
+  "bin": {
+    "reposecure": "index.js"
+  },
+  "license": "LicenseRef-COCL-1.0",
+  "type": "module"
+}
