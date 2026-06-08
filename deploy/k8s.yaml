@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: reposecure, labels: { app: reposecure } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: reposecure } }
+  template:
+    metadata: { labels: { app: reposecure } }
+    spec:
+      containers:
+        - name: reposecure
+          image: ghcr.io/cognis-digital/reposecure:latest
+          ports: [{ containerPort: 8000 }]
+          resources:
+            requests: { cpu: "50m", memory: "64Mi" }
+            limits: { cpu: "500m", memory: "256Mi" }
+---
+apiVersion: v1
+kind: Service
+metadata: { name: reposecure }
+spec:
+  selector: { app: reposecure }
+  ports: [{ port: 80, targetPort: 8000 }]
