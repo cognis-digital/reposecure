@@ -16,7 +16,7 @@
 </div>
 
 ```bash
-pip install cognis-reposecure
+pip install "git+https://github.com/cognis-digital/reposecure.git"
 reposecure scan .            # → prioritized findings in seconds
 ```
 
@@ -47,7 +47,7 @@ repo report card
 ## Quick start
 
 ```bash
-pip install cognis-reposecure
+pip install "git+https://github.com/cognis-digital/reposecure.git"
 reposecure --version
 reposecure scan .                       # scan current project
 reposecure scan . --format json         # machine-readable
