@@ -20,6 +20,12 @@ pip install "git+https://github.com/cognis-digital/reposecure.git"
 reposecure scan .            # → prioritized findings in seconds
 ```
 
+<!-- cognis:layman:start -->
+## What is this?
+
+reposecure scans a code repository and gives it a security grade from A to F in one command, with no accounts or cloud services required. It checks four things: whether any passwords or API keys are accidentally committed to the code, whether automated testing pipelines are set up, whether code-review safeguards are in place, and whether software dependencies are properly pinned to known versions. Developers and security-conscious teams use it to quickly spot the most common security gaps before they become problems.
+<!-- cognis:layman:end -->
+
 ## Contents
 
 - [Why reposecure?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
@@ -44,6 +50,42 @@ repo report card
 <div align="right"><a href="#top">↑ back to top</a></div>
 
 <a name="quick-start"></a>
+<!-- cognis:install:start -->
+## Install
+
+`reposecure` is source-available (not published to PyPI) — every method below installs
+straight from GitHub. Pick whichever you prefer; the one-line scripts auto-detect
+the best tool available on your machine.
+
+**One-liner (Linux / macOS):**
+```sh
+curl -fsSL https://raw.githubusercontent.com/cognis-digital/reposecure/HEAD/install.sh | sh
+```
+
+**One-liner (Windows PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/cognis-digital/reposecure/HEAD/install.ps1 | iex
+```
+
+**Or install manually — any one of:**
+```sh
+pipx install "git+https://github.com/cognis-digital/reposecure.git"     # isolated (recommended)
+uv tool install "git+https://github.com/cognis-digital/reposecure.git"  # uv
+pip install "git+https://github.com/cognis-digital/reposecure.git"      # pip
+```
+
+**From source:**
+```sh
+git clone https://github.com/cognis-digital/reposecure.git
+cd reposecure && pip install .
+```
+
+Then run:
+```sh
+reposecure --help
+```
+<!-- cognis:install:end -->
+
 ## Quick start
 
 ```bash
