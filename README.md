@@ -20,6 +20,34 @@ pip install cognis-reposecure
 reposecure scan .            # → prioritized findings in seconds
 ```
 
+## Usage — step by step
+
+1. **Install** (Python 3.9+):
+
+   ```bash
+   pip install reposecure            # or: pipx install reposecure
+   ```
+
+2. **Grade a repository's security posture.** Run `grade` against a path (defaults to the current directory):
+
+   ```bash
+   reposecure grade .
+   ```
+
+3. **Get machine-readable output** for dashboards or further processing:
+
+   ```bash
+   reposecure grade /path/to/repo --format json > posture.json
+   ```
+
+4. **Read the result.** The report assigns an overall letter grade plus the checks that raised or lowered it. In JSON mode, parse the structured findings to track posture over time.
+
+5. **Gate in CI.** Require a minimum grade and fail the build when the repo falls below it:
+
+   ```bash
+   reposecure grade . --min-grade B   # exit non-zero if posture is worse than B
+   ```
+
 ## Contents
 
 - [Why reposecure?](#why) · [Features](#features) · [Quick start](#quick-start) · [Example](#example) · [Architecture](#architecture) · [AI stack](#ai-stack) · [How it compares](#how-it-compares) · [Integrations](#integrations) · [Install anywhere](#install-anywhere) · [Related](#related) · [Contributing](#contributing)
